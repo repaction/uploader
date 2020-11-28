@@ -1,0 +1,20 @@
+name: Uploader
+description: To upload a file to dropbox disk.
+author: Fei Qi
+branding:
+  icon: 'file_cabinet'
+  color: 'gray'
+inputs:
+  src_file:
+    description: The source file to be uploaded
+    required: true
+  dst_file:
+    description: The destination file to write to
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.src_file }}
+    - ${{ inputs.dst_file }}
+    # - ${{ inputs.working_directory }}
