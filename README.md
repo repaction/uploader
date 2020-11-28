@@ -1,9 +1,10 @@
 ![Testing Status](https://github.com/repaction/uploader/workflows/Testing%20uploader/badge.svg)
 ---
 
-# Dropbox Uploader Action
+# Cloud Uploader Action
 
-This github action simply upload a file to dropbox.
+This github action simply upload a file to cloud. Now only uploading
+to dropbox has been implemented.
 
 ## Usage
 
@@ -31,11 +32,14 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     steps:
-    - name: Upload README
-      uses: repaction/uploader@main
-      env:
-        DROPBOX_TOKEN: ${{ secrets.DROPBOX_TOKEN }}
-      with:
-        src_file: README.md
-        dst_file: /devel/README.md
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Upload README
+        uses: repaction/uploader@main
+        env:
+          DROPBOX_TOKEN: ${{ secrets.DROPBOX_TOKEN }}
+        with:
+          src_file: README.md
+          dst_file: /devel/README.md
 ```

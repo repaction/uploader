@@ -6,11 +6,13 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     steps:
-    - name: Upload README
-      uses: repaction/uploader@main
-      env:
-        DROPBOX_TOKEN: ${{ secrets.DROPBOX_TOKEN }}
-      with:
-        src_file: README.md
-        dst_file: /devel/README.md
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Upload README
+        uses: repaction/uploader@main
+        env:
+          DROPBOX_TOKEN: ${{ secrets.DROPBOX_TOKEN }}
+        with:
+          src_file: README.md
+          dst_file: /devel/README.md
 

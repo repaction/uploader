@@ -1,9 +1,9 @@
-name: Uploader
-description: To upload a file to dropbox disk.
+name: Cloud Uploader
+description: To upload a file to a cloud disk.
 author: Fei Qi
 branding:
-  icon: 'file_cabinet'
-  color: 'gray'
+  icon: 'upload-cloud'
+  color: 'green'
 inputs:
   src_file:
     description: The source file to be uploaded
