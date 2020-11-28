@@ -1,3 +1,6 @@
+![Testing Status](https://github.com/repaction/uploader/workflows/Testing%20uploader/badge.svg)
+---
+
 # Dropbox Uploader Action
 
 This github action simply upload a file to dropbox.
@@ -29,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Upload README
-      uses: repaction/uploader@master
+      uses: repaction/uploader@main
       env:
         DROPBOX_TOKEN: ${{ secrets.DROPBOX_TOKEN }}
       with:
